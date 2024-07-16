@@ -7,37 +7,28 @@ MEMORY
 
 SECTIONS
 {
-	
-
 	.text :
 	{
 		*(.vectors*)
 		*(.text*)
-		. = ALIGN(4);    //0x80000
+		. = ALIGN(4);    
 		END_TEXT = .;
 	} > flash
 
 	.data : 
 	{
-		START_DATA = .; //0x80000 VMA address
+		START_DATA = .; 
 		*(.data)
 		. = ALIGN(4);
 		END_DATA = .;
 	} > sram AT > flash 
 	
-
-	.rodata :
-	{
-		*(.rodata)
-	}
-
 	.bss : 
 	{
 		START_BSS = .;
 		*(.bss)
 		. = ALIGN(4);
 		END_BSS = .;
-		. = ALIGN(4);
 		. = . + 0x1000;
 		STACK_TOP = .;
 	} > sram
