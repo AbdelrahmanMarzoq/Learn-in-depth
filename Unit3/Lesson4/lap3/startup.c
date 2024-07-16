@@ -1,6 +1,3 @@
-
-
-
 extern unsigned int STACK_TOP;
 extern unsigned int END_TEXT;
 extern unsigned int START_DATA;

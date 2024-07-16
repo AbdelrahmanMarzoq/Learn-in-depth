@@ -1,7 +1,7 @@
 #copyright : Abdelrhman marzoq
 CC = arm-none-eabi-
 CPU_NAME =-mcpu=cortex-m4
-CFLAGS = -g $(CPU_NAME)
+CFLAGS = -gdwarf-2 -g $(CPU_NAME)
 INCS = -I .
 LIBS =
 SRC = $(wildcard *.c)
@@ -27,7 +27,7 @@ $(Poject_Name).bin : $(Poject_Name).elf
 	$(CC)objcopy.exe -O binary $< $@
 
 clean:
-	rm *.bin *.elf
+	rm *.o *.elf *.bin *.axf
 
-clean_all:
-	rm *.o *.elf *.bin
+
+	

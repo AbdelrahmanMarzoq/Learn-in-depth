@@ -7,7 +7,6 @@ MEMORY
 
 SECTIONS
 {
-	
 
 	.text :
 	{

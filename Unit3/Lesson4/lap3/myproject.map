@@ -74,13 +74,17 @@ LOAD main.o
 OUTPUT(unit3-lab4-cortex-m4.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000      0x239
- .debug_info    0x00000000      0x199 startup.o
- .debug_info    0x00000199       0xa0 main.o
+.debug_info     0x00000000      0x262
+ .debug_info    0x00000000      0x1be startup.o
+ .debug_info    0x000001be       0xa4 main.o
 
 .debug_abbrev   0x00000000      0x13a
  .debug_abbrev  0x00000000       0xd3 startup.o
  .debug_abbrev  0x000000d3       0x67 main.o
+
+.debug_loc      0x00000000      0x164
+ .debug_loc     0x00000000      0x12c startup.o
+ .debug_loc     0x0000012c       0x38 main.o
 
 .debug_aranges  0x00000000       0x40
  .debug_aranges
@@ -92,10 +96,10 @@ LOAD linker stubs
  .debug_line    0x00000000       0xdb startup.o
  .debug_line    0x000000db       0x98 main.o
 
-.debug_str      0x00000000      0x19d
- .debug_str     0x00000000      0x18b startup.o
- .debug_str     0x0000018b       0x12 main.o
-                                 0xa9 (size before relaxing)
+.debug_str      0x00000000      0x1a7
+ .debug_str     0x00000000      0x195 startup.o
+ .debug_str     0x00000195       0x12 main.o
+                                 0xb3 (size before relaxing)
 
 .comment        0x00000000       0x49
  .comment       0x00000000       0x49 startup.o
