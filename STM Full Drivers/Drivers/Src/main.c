@@ -178,6 +178,7 @@ void Toggle()
 	GPIO_TOGGLE_PIN(&LED);
 	LCD_4bit_Set_Cursor(&lcd1, 1, 1);
 	LCD_4bit_Print(&lcd1, "Welocme");
+	myWait(100);
 }
 
 int main(void)
@@ -201,6 +202,7 @@ int main(void)
 	ext1.PF_IRQ = Toggle;
 	EXTI_Init(&ext1);
 	LCD_4bit_init(&lcd1);
+	float x = 7.0/2.0;
 
 	while(1)
 	{
@@ -210,6 +212,9 @@ int main(void)
 			LCD_4bit_Print_Char(&lcd1, press);
 			SevenSegment_Print(&segm, press);
 		}
+		LCD_4bit_Set_Cursor(&lcd1, 1, 1);
+//		LCD_4bit_Print_Fl_Number(&lcd1, x, 9);
+		myWait(100);
 	}
 }
 

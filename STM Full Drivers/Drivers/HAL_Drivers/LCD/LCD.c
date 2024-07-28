@@ -123,6 +123,37 @@ void LCD_4bit_Print_Number(LCD_4bit_t *LCD, int value)
 	LCD_4bit_Print(LCD, str);
 }
 
+void LCD_4bit_Print_Fl_Number(LCD_4bit_t *LCD, float value, uint8_t N_digits)
+{
+	uint8_t str[10] = {0};
+	uint8_t strF[10]  = {0};
+	uint32_t PWR = 1;
+
+	// Befor Floating point
+	// Extract integer part from float number
+	int Decimal = (int)value;
+	// Conver integer part to string
+	sprintf(str, "%d", Decimal);
+	LCD_4bit_Print(LCD, str);
+
+
+	// After Floating point with N_digits
+	// Extract fractional Part
+	float Fraction = (float)value - (float)(Decimal);
+
+	// Calculate 10 pwr N_digit
+	for (int i = 0; i < N_digits; i++) PWR *= 10;
+	// Convert Fractional part to integer part with limit number of digit
+	int FracToInt = (int)(Fraction * PWR);
+
+    // Conver Fractional part to string after Turning into integer
+    sprintf(strF, "%d", FracToInt);
+    // Print Floating Point
+    LCD_4bit_Print_Char(LCD, '.');
+    LCD_4bit_Print(LCD, strF);
+}
+
+
 void LCD_4bit_Print_Custom_char(LCD_4bit_t *LCD, const uint8_t c_char[], uint8_t Pos){
 	Pos &= 0x07;
 	LCD_4bit_Command(LCD, _LCD_CGRAM_START + (Pos*8));
@@ -296,6 +327,36 @@ void LCD_8bit_Print_Number(LCD_8bit_t *LCD, int value)
 	uint8_t str[10] = {0};
 	sprintf(str,"%i",value);
 	LCD_8bit_Print(LCD, str);
+}
+
+void LCD_8bit_Print_Fl_Number(LCD_8bit_t *LCD, float value, uint8_t N_digits)
+{
+	uint8_t str[11] = {0};
+	uint8_t strF[11]  = {0};
+	uint32_t PWR = 1;
+
+	// Befor Floating point
+	// Extract integer part from float number
+	int Decimal = (int)value;
+	// Conver integer part to string
+	sprintf(str, "%d", Decimal);
+	LCD_8bit_Print(LCD, str);
+
+
+	// After Floating point with N_digits
+	// Extract fractional Part
+	float Fraction = (float)value - (float)(Decimal);
+
+	// Calculate 10 pwr N_digit
+	for (int i = 0; i < N_digits; i++) PWR *= 10;
+	// Convert Fractional part to integer part with limit number of digit
+	int FracToInt = (int)(Fraction * PWR);
+
+    // Conver Fractional part to string after Turning into integer
+    sprintf(strF, "%d", FracToInt);
+    // Print Floating Point
+    LCD_8bit_Print_Char(LCD, '.');
+    LCD_8bit_Print(LCD, strF);
 }
 
 void LCD_8bit_Print_Custom_char(LCD_8bit_t *LCD, const uint8_t c_char[], uint8_t Pos)
