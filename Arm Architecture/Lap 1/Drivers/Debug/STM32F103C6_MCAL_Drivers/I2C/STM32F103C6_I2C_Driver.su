@@ -1,0 +1,9 @@
+STM32F103C6_I2C_Driver.c:72:6:I2C_INIT	24	static
+STM32F103C6_I2C_Driver.c:136:6:I2C_Slave_Init	16	static
+STM32F103C6_I2C_Driver.c:156:6:I2C_Master_Write	32	static
+STM32F103C6_I2C_Driver.c:202:6:I2C_Master_Read	32	static
+STM32F103C6_I2C_Driver.c:250:6:I2C_deINIT	16	static
+STM32F103C6_I2C_Driver.c:273:13:I2C_GPIO_PINs	24	static
+STM32F103C6_I2C_Driver.c:312:13:Generate_Start	16	static
+STM32F103C6_I2C_Driver.c:330:13:Generate_Stop	16	static
+STM32F103C6_I2C_Driver.c:342:15:Get_Status	24	static
