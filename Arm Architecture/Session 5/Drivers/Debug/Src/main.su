@@ -1,0 +1,8 @@
+main.c:56:6:init_Func	8	static
+main.c:66:13:myWait	24	static
+main.c:74:6:SVC_Handler	4	static,ignoring_inline_asm
+main.c:79:14:TASKA	24	static
+main.c:84:14:TASKB	24	static
+main.c:89:6:MainOS	4	static
+main.c:103:5:main	16	static,ignoring_inline_asm
+main.c:161:6:EXT_Callback	4	static
