@@ -1,10 +1,11 @@
-/*
- * SevenSegment.c
- *
- *  Created on: Jul 26, 2024
- *      Author: Abdelrhman Marzoq
- */
-
+/**
+ ******************************************************************************
+ * @File           : SevenSegment.c
+ * @Author         : Abdelrhman Marzoq
+ * @Brief          : Sevensegment Driver
+ * 			Created on: Jul 26, 2024
+ ******************************************************************************
+**/
 
 #include "SevenSegment.h"
 

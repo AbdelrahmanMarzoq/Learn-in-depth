@@ -1,10 +1,11 @@
-/*
- * Keypad.c
- *
- *  Created on: Jul 26, 2024
- *      Author: Abdelrhman Marzoq
- */
-
+/**
+ ******************************************************************************
+ * @File           : Keypad.c
+ * @Author         : Abdelrhman Marzoq
+ * @Brief          : Keypad Driver
+ * 			Created on: Jul 26, 2024
+ ******************************************************************************
+**/
 
 #include "Keypad.h"
 

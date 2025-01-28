@@ -1,10 +1,11 @@
-/*
- * LCD.c
- *
- *  Created on: Jul 24, 2024
- *      Author: Abdelrhman Marzoq
- */
-
+/**
+ ******************************************************************************
+ * @File           : LCD.c
+ * @Author         : Abdelrhman Marzoq
+ * @Brief          : LCD Driver
+ * 			Created on: Jul 24, 2024
+ ******************************************************************************
+**/
 
 							/*************************************/
 							/*	  	     Include Section         */
@@ -60,7 +61,7 @@ void LCD_4bit_init(LCD_4bit_t *LCD)
 	// Send command to clear Screen
 	LCD_4bit_Command(LCD, _LCD_CLEAR);
 	// Send command to Display on and Blink cursor on
-	LCD_4bit_Command(LCD, _LCD_DISPLAY_ON | _LCD_CURSOR_ON);
+	LCD_4bit_Command(LCD, _LCD_DISPLAY_ON | _LCD_UNDERLINE_CURSOR_ON);
 	// Send command to set cursor increamenet toward right after writing without shift display
 	LCD_4bit_Command(LCD, _LCD_INC_CURSOR_SHIFT_OFF);
 	// Send command that i ready to recieve data so i make the AC (Address counter) to First address in DDRAM
@@ -118,8 +119,10 @@ void LCD_4bit_Print(LCD_4bit_t *LCD, uint8_t *data){
 
 void LCD_4bit_Print_Number(LCD_4bit_t *LCD, int value)
 {
-	uint8_t str[10] = {0};
-	sprintf(str,"%i",value);
+	uint8_t str[13] = {0};
+	sprintf(str,"%d",value);
+	int length = strlen(str);
+	if (value < 0) str[length + 1] = '-';
 	LCD_4bit_Print(LCD, str);
 }
 
@@ -134,11 +137,18 @@ void LCD_4bit_Print_Fl_Number(LCD_4bit_t *LCD, float value, uint8_t N_digits)
 	int Decimal = (int)value;
 	// Conver integer part to string
 	sprintf(str, "%d", Decimal);
+	int length = strlen(str);
+	if (Decimal < 0) str[length + 1] = '-';
 	LCD_4bit_Print(LCD, str);
 
 
 	// After Floating point with N_digits
 	// Extract fractional Part
+	if (value < 0)
+	{
+		value *= -1;
+		Decimal *= -1;
+	}
 	float Fraction = (float)value - (float)(Decimal);
 
 	// Calculate 10 pwr N_digit
@@ -208,6 +218,7 @@ void LCD_4bit_Clear(LCD_4bit_t *LCD)
 {
 	// To Clear LCD & DDRAM Memory
 	LCD_4bit_Command(LCD, _LCD_CLEAR);
+	LCD_4bit_Set_Cursor(LCD, 1, 1);
 }
 
 #endif

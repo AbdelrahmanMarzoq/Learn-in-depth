@@ -20,10 +20,16 @@ OBJCOPY_BIN :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 HAL_Drivers/7seg \
+HAL_Drivers/EEPROM \
 HAL_Drivers/Keypad \
 HAL_Drivers/LCD \
+STM32F103C6_MCAL_Drivers/ADC \
 STM32F103C6_MCAL_Drivers/EXTI \
 STM32F103C6_MCAL_Drivers/GPIO \
+STM32F103C6_MCAL_Drivers/I2C \
+STM32F103C6_MCAL_Drivers/RCC \
+STM32F103C6_MCAL_Drivers/SPI \
+STM32F103C6_MCAL_Drivers/UART \
 Src \
 Startup \
 

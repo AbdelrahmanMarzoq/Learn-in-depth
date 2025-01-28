@@ -1,9 +1,11 @@
-/*
- * SevenSegment.h
- *
- *  Created on: Jul 26, 2024
- *      Author: Abdelrhman Marzoq
- */
+/**
+ ******************************************************************************
+ * @File           : SevenSegment.h
+ * @Author         : Abdelrhman Marzoq
+ * @Brief          : Driver Header File
+ * 			Created on: Jul 26, 2024
+ ******************************************************************************
+**/
 
 #ifndef _7SEG_SEVENSEGMENT_H_
 #define _7SEG_SEVENSEGMENT_H_

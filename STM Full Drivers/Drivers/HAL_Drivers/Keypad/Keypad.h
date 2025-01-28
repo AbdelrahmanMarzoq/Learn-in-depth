@@ -1,9 +1,11 @@
-/*
- * Keypad.h
- *
- *  Created on: Jul 26, 2024
- *      Author: Abdelrhman Marzoq
- */
+/**
+ ******************************************************************************
+ * @File           : Keypad.h
+ * @Author         : Abdelrhman Marzoq
+ * @Brief          : Driver Header File
+ * 			Created on: Jul 26, 2024
+ ******************************************************************************
+**/
 
 /**
  * To Customize This Driver for your Keypad i*j Just Justify these Macros

@@ -1,13 +1,19 @@
+/**
+ ******************************************************************************
+ * @File           : LCD.h
+ * @Author         : Abdelrhman Marzoq
+ * @Brief          : Driver Header File
+ * 			Created on: Jul 24, 2024
+ ******************************************************************************
+**/
+
 /*
- * LCD.h
- *
- *  Created on: Jul 24, 2024
- *      Author: Abdelrhman Marzoq
- *
- *
  *      All documentation on Functions 8bit mode
  *      The 4bit mode have the same documentation
- * 							How To Use this Driver
+ *
+ *********************************************************************************************
+ * 						*********How To Use this Driver*********
+ *********************************************************************************************
  *
  * First you must define Your Mode 8bit or 4bit be Enable these Macros in Driver
  * (_LCD_8BIT_MODE) Macro for 8bit mode    Line 88
@@ -18,7 +24,6 @@
  *
  * You should first Call Funtion (LCD_4bit_init) or (LCD_8bit_init) before Calling any Function.
  *
- * This Driver Can`t Print Floating number.
  */
 
 
@@ -123,7 +128,7 @@ typedef struct
 
 
 							/*****************************************/
-							/*     Function Declaration	  	     	 */
+							/*          Function Declaration	  	 */
 							/*****************************************/
 
 
@@ -158,7 +163,7 @@ void LCD_8bit_Set_Cursor(LCD_8bit_t *LCD, uint8_t row, uint8_t column);
  * @brief				-
  * @param [in]			- LCD     : pointer to LCD_8bit_t structure that Contain
  * 						            Configuration for RS and EN and Data Wires.
- * @param [in]			- Command : is commands fromt @ref INSTRUCTIONS
+ * @param [in]			- Command : is commands from @ref INSTRUCTIONS
  * @retval				- NONE
  * Note					- NONE
 */
